@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: 2017-08-17T20:53:14Z
+  labels:
+    app: sidekiq
+  name: sidekiq
+  namespace: default
+  resourceVersion: "151962"
+  selfLink: /api/v1/namespaces/default/pods/sidekiq
+  uid: 168501e5-838e-11e7-b806-08002769efd5
+spec:
+  containers:
+  - args:
+    - bundle
+    - exec
+    - sidekiq
+    - -C
+    - config/sidekiq.yml
+    envFrom:
+    - configMapRef:
+        name: variables
+    image: 10.0.0.12:5000/drkiq
+    imagePullPolicy: Always
+    name: sidekiq
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-m400f
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  nodeName: minikube
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  volumes:
+  - name: default-token-m400f
+    secret:
+      defaultMode: 420
+      secretName: default-token-m400f
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: 2017-08-17T20:53:14Z
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: 2017-08-17T20:53:15Z
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: 2017-08-17T20:53:14Z
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://6487519601a89e6c13863a10f29fb179a47b7aae26794124e4c0f940b5ce197a
+    image: 10.0.0.12:5000/sidekiq:latest
+    imageID: docker-pullable://10.0.0.12:5000/drkiq@sha256:aee497f3576ddb5a42cdb2bf685c8d37b1d6be69c557a20ef4bbec866c40ffc8
+    lastState: {}
+    name: sidekiq
+    ready: true
+    restartCount: 0
+    state:
+      running:
+        startedAt: 2017-08-17T20:53:15Z
+  hostIP: 192.168.99.100
+  phase: Running
+  podIP: 172.17.0.10
+  qosClass: BestEffort
+  startTime: 2017-08-17T20:53:14Z

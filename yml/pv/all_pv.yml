@@ -1,0 +1,170 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    creationTimestamp: 2017-08-17T17:57:07Z
+    labels:
+      type: local
+    name: pv-volume2
+    namespace: ""
+    resourceVersion: "134308"
+    selfLink: /api/v1/persistentvolumes/pv-volume2
+    uid: 7c6c099a-8375-11e7-9d73-08002769efd5
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 100Mi
+    hostPath:
+      path: /data/v2
+    persistentVolumeReclaimPolicy: Retain
+    storageClassName: manual
+  status:
+    phase: Available
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    creationTimestamp: 2017-08-17T17:57:38Z
+    labels:
+      type: local
+    name: pv-volume3
+    namespace: ""
+    resourceVersion: "134359"
+    selfLink: /api/v1/persistentvolumes/pv-volume3
+    uid: 8ed8a220-8375-11e7-9d73-08002769efd5
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 100Mi
+    hostPath:
+      path: /data/v3
+    persistentVolumeReclaimPolicy: Retain
+    storageClassName: manual
+  status:
+    phase: Available
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      hostPathProvisionerIdentity: f3007550-82c1-11e7-9a9b-08002769efd5
+      pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+      volume.beta.kubernetes.io/storage-class: standard
+    creationTimestamp: 2017-08-16T21:18:10Z
+    name: pvc-67ef600f-82c8-11e7-9a9b-08002769efd5
+    namespace: ""
+    resourceVersion: "145699"
+    selfLink: /api/v1/persistentvolumes/pvc-67ef600f-82c8-11e7-9a9b-08002769efd5
+    uid: 67f7ed40-82c8-11e7-9a9b-08002769efd5
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 100Mi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: sidekiq-claim0
+      namespace: default
+      resourceVersion: "42314"
+      uid: 67ef600f-82c8-11e7-9a9b-08002769efd5
+    hostPath:
+      path: /tmp/hostpath-provisioner/pvc-67ef600f-82c8-11e7-9a9b-08002769efd5
+    persistentVolumeReclaimPolicy: Delete
+  status:
+    phase: Released
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      hostPathProvisionerIdentity: 7e0d7462-811b-11e7-aa70-08002769efd5
+      pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+      volume.beta.kubernetes.io/storage-class: standard
+    creationTimestamp: 2017-08-14T20:04:02Z
+    name: pvc-b7aa7328-812b-11e7-aa70-08002769efd5
+    namespace: ""
+    resourceVersion: "10874"
+    selfLink: /api/v1/persistentvolumes/pvc-b7aa7328-812b-11e7-aa70-08002769efd5
+    uid: b7b35f5b-812b-11e7-aa70-08002769efd5
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 100Mi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: drkiq-postgres
+      namespace: default
+      resourceVersion: "10866"
+      uid: b7aa7328-812b-11e7-aa70-08002769efd5
+    hostPath:
+      path: /tmp/hostpath-provisioner/pvc-b7aa7328-812b-11e7-aa70-08002769efd5
+    persistentVolumeReclaimPolicy: Delete
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      hostPathProvisionerIdentity: 7e0d7462-811b-11e7-aa70-08002769efd5
+      pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+      volume.beta.kubernetes.io/storage-class: standard
+    creationTimestamp: 2017-08-14T21:08:31Z
+    name: pvc-b9a632d9-8134-11e7-aa70-08002769efd5
+    namespace: ""
+    resourceVersion: "145692"
+    selfLink: /api/v1/persistentvolumes/pvc-b9a632d9-8134-11e7-aa70-08002769efd5
+    uid: b9ab72fb-8134-11e7-aa70-08002769efd5
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 100Mi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: drkiq-claim0
+      namespace: default
+      resourceVersion: "15271"
+      uid: b9a632d9-8134-11e7-aa70-08002769efd5
+    hostPath:
+      path: /tmp/hostpath-provisioner/pvc-b9a632d9-8134-11e7-aa70-08002769efd5
+    persistentVolumeReclaimPolicy: Delete
+  status:
+    phase: Released
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      hostPathProvisionerIdentity: 7e0d7462-811b-11e7-aa70-08002769efd5
+      pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+      volume.beta.kubernetes.io/storage-class: standard
+    creationTimestamp: 2017-08-14T20:41:28Z
+    name: pvc-f25dba70-8130-11e7-aa70-08002769efd5
+    namespace: ""
+    resourceVersion: "13411"
+    selfLink: /api/v1/persistentvolumes/pvc-f25dba70-8130-11e7-aa70-08002769efd5
+    uid: f262be9b-8130-11e7-aa70-08002769efd5
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 100Mi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: drkiq-redis
+      namespace: default
+      resourceVersion: "13403"
+      uid: f25dba70-8130-11e7-aa70-08002769efd5
+    hostPath:
+      path: /tmp/hostpath-provisioner/pvc-f25dba70-8130-11e7-aa70-08002769efd5
+    persistentVolumeReclaimPolicy: Delete
+  status:
+    phase: Bound
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

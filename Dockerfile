@@ -1,4 +1,3 @@
-e the barebones version of Ruby 2.2.3.
 FROM ruby:2.2.3-slim
 
 # Optionally set a maintainer name to let people know who made this image.

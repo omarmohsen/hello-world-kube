@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2017-08-15T07:38:20Z
+  labels:
+    app: registry
+  name: registry
+  namespace: default
+  resourceVersion: "34020"
+  selfLink: /api/v1/namespaces/default/services/registry
+  uid: b623cc8d-818c-11e7-87b5-08002769efd5
+spec:
+  clusterIP: 10.0.0.12
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30476
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: registry
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
